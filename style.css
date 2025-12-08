@@ -2,6 +2,53 @@
   font-family: 'Montserrat', 'Lato', sans-serif;
 }
 
+/* ----- RESPONSIVITET ----- */
+@media (max-width: 768px) {
+  /* Header: logga ovanför rubriken på små skärmar */
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logga {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-bottom: 0.5rem;
+    height: 80px; /* gör loggan lite mindre på mobilen */
+  }
+
+  .header-text {
+    text-align: center;
+    font-size: 1.5rem; /* justera rubrikstorlek på mobilen */
+  }
+
+  /* Popup: ta upp större del av skärmen men ändå inte fullbredd */
+  .modal-content {
+    width: 95%;
+    max-width: 350px;
+    padding: 1.5rem 2rem;
+  }
+
+  /* Info-sektion: gör korten mer avlånga och centrerade */
+  .info-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .info-section section {
+    max-width: 90%;
+  }
+
+  /* Knappar lite större på mobilen */
+  .openModalBtn, #kontaktForm button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
+  }
+}
 
 header {
   
