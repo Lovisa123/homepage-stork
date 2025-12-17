@@ -1,2 +1,2 @@
 # homepage-dev
-homepage dev - stef
+homepage dev
