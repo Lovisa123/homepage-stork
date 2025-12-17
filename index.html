@@ -3,122 +3,27 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="img/stefantrans.png">
+<link rel="icon" type="image/png" href="img/logga.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENERGI & KLIMATKONTROLL</title>
+  <title>Storkhuset</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <header>
-    <img src="img/stefantrans.png" alt="Logga" class="logga">
-    <div class="header-text">
-      <h1>ENERGI & KLIMATKONTROLL</h1>
-      <p>Småland AB</p>
-    </div>
+    <img src="img/logga.png" alt="Logga" class="logga">
   </header>
 
-  <main>
-    <div class="container">
-
-      <div class="info-section">
-        <section>
-          <h2>Tjänster</h2>
-         <ul class="tjanster-list">
-        <li>Certifierad OVK-kontrollant</li>
-       <li>Rådgivning inom energi och klimat</li>
-       <li>Service och underhåll av ventilationssystem</li>
-        </section>
-
-        <section>
-          <h2>Kontakt</h2>
-          <p>Telefon: <a class="kontakt-lank" href="tel:079-3514522">079-3514522</a> </p>
-          <p>Mail: <a class="kontakt-lank" href="mailto:stefan@ek-kontroll.se">stefan@ek-kontroll.se</a></p>
-
-   
-
-          <!-- Knap­pen som öppnar formuläret -->
-          <button class="openModalBtn">Skicka meddelande</button>
-        </section>
-      </div>
-
-    </div>
-  </main>
+  
 
   <footer>
-    <p> Energi & Klimatkontroll Småland AB </p>
-    <p>Bokgatan 8, 33151 Värnamo </p>
+    <p> Storkhuset AB </p>
+    <p> Storkvägen 4, 756 51, Uppsala </p>
   </footer>
 
-  <!-- POPUP FORMULÄR (bara detta!) -->
-  <div class="modal" id="kontaktModal">
-    <div class="modal-content">
-      <span class="closeBtn">&times;</span>
+  
 
-      <h2>Kontakta oss</h2>
 
-      <form id="kontaktForm">
-
-        <label for="namn">Namn:</label>
-        <input type="text" id="namn" name="namn" required>
-
-        <label for="email">E-post:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="meddelande">Meddelande:</label>
-        <textarea id="meddelande" name="meddelande" required></textarea>
-
-        <button type="submit">Skicka</button>
-        <div id="status"></div>
-
-      </form>
-
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-  <script>
-  emailjs.init("6YEQrI7h44a9iHkGL");
-</script>
-
-  <script>
-
-    // --- Modal ---
-    const modal = document.getElementById("kontaktModal");
-    const openBtn = document.querySelector(".openModalBtn");
-    const closeBtn = document.querySelector(".closeBtn");
-
-    openBtn.addEventListener("click", () => {
-      modal.style.display = "flex";
-    });
-
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
-    });
-
-    // --- EmailJS ---
-    const form = document.getElementById("kontaktForm");
-    const statusDiv = document.getElementById("status");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      emailjs.sendForm('service_qssa7tm', 'template_ycvbi2j', this)
-        .then(() => {
-          statusDiv.textContent = "Meddelandet skickat!";
-          form.reset();
-        }, (err) => {
-          statusDiv.textContent = "Fel: " + JSON.stringify(err);
-        });
-    });
-  </script>
-
-</body>
 </html>
