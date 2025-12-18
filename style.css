@@ -6,3 +6,27 @@
   padding: 0;
 }
 
+header{
+  background-color: aqua;
+  justify-content: flex-start;
+
+}
+
+footer{
+  background-color: darkkhaki;
+}
+
+body{
+  width: 100%;
+}
+
+.logga{
+  height: 400px;
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.headertext{
+  text-align: left;
+  color: blueviolet;l
+}
