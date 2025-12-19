@@ -1,32 +1,270 @@
-/* ----- GLOBAL ----- */
-* {
-  font-family: 'Montserrat', 'Lato', sans-serif;
-  box-sizing: border-box;
+html, body {
+  height: 100%;
   margin: 0;
-  padding: 0;
+  
 }
 
-header{
-  background-color: aqua;
-  justify-content: flex-start;
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  
+}
+
+main {
+  flex: 1;
+  background-image: url("img/background.png");
+  background-size: cover;      
+  background-position: center; 
+}
+
+.intro {
+  display: flex;
+  gap: 50px; 
+  padding: 50px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid white;
+}
+
+.name-card, .company-card {
+  background-color: #f0f0f0; 
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1; 
+  min-width: 300px; 
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* elegant men inte för tjock */
+}
+
+.name-card h1
+,
+.company-card h1 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  border-bottom: 2px solid #225d81;
+  display: inline-block;
+  color:  #225d81;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* elegant men inte för tjock */
+}
+
+.name-card h2
+,
+.company-card  h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 15px; 
+  color: #13375f;    
+  font-weight: 400; /* elegant men inte för tjock */
+}
+
+.name-card2 .divider {
+  display: inline-block;
+  width: 2px;                /* tjocklek på linjen */
+  height: 70px;              /* höjd på linjen */
+  background-color: #225d81; /* färg på linjen */
+}
+.name-card2  {
+  display: flex;
+  align-items: center;       /* centrerar vertikalt */
+  gap: 15px; 
+}
+.name-card h3
+,
+.company-card  h3 {
+  font-size: 18px;
+  margin-bottom: 15px;   
+  font-family: 'Playfair Display', serif;
+  font-weight: 400; /* elegant men inte för tjock */    
+}
+
+.projects {
+  padding: 25px 50px;
+}
+
+.projects h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: white;
+  margin-bottom: 40px;
+  border-left: 5px solid white;
+  padding-left: 15px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.project-bubble {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  padding-top: 8px;
 
 }
 
-footer{
-  background-color: darkkhaki;
+.project-bubble h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #13375f;
 }
 
-body{
-  width: 100%;
+.project-bubble p {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
 }
 
-.logga{
-  height: 400px;
-  width: 400px;
-  flex-shrink: 0;
+.project-meta {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #225d81;
+  border-top: 1px solid #225d81;
+  padding-top: 10px;
+  margin-top: auto; /* trycker ner företaget längst ner */
 }
 
-.headertext{
-  text-align: left;
-  color: blueviolet;l
+.site-header {
+  background-color: #13375f;
+  color: #ffffff;
+  padding: 15px 30px;
+  border-bottom: 1px solid #e5e7eb;
 }
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logga + text */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logga {
+  height: 75px;
+  width: auto;
+}
+
+.logo-area h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: #111827;
+}
+
+
+.site-footer {
+  background-color: #13375f;
+  color: #ffffff;
+  padding: 50px 20px 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 10px;
+}
+
+.footer-social img {
+  width: 28px;
+}
+
+.footer-copy {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;   /* avstånd mellan ikon och text */
+  margin-bottom: 8px;
+}
+
+.contact-item .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.follow-row {
+  display: flex;
+  align-items: center; 
+  gap: 20px;           
+}
+.follow-row .icon {
+  width: 30px;  
+  height: 30px;
+  object-fit: contain;
+}
+.main-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-box {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover */
+.nav-box:hover {
+  opacity: 0.8;
+}
+
+/* Aktiv sida */
+.nav-box.active {
+  border-bottom: 2px solid #38bdf8;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.footer-copy{
+  color: white;
+}
+
