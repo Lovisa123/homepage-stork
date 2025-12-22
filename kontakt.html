@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="img/logga.png">
+<link rel="icon" type="image/png" href="img/loggalink.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Storkhuset</title>
@@ -22,7 +22,6 @@
     <nav class="main-nav">
       <a href="index.html" class="nav-box">Startsida</a>
       <a href="about.html" class="nav-box">Om mig</a>
-      <a href="tjänster.html" class="nav-box" >Tjänster</a>
       <a href="kontakt.html" class="nav-box" active >Kontakt</a>
     </nav>
 
@@ -30,6 +29,54 @@
 </header>
 
 <main>
+
+    <main class="contact-page">
+
+        <h2>Kontakt</h2>
+      
+        <form id="kontaktForm">
+      
+          <label for="namn">Namn</label>
+          <input type="text" id="namn" name="namn" required>
+      
+          <label for="email">E-post</label>
+          <input type="email" id="email" name="email" required>
+      
+          <label for="meddelande">Meddelande</label>
+          <textarea id="meddelande" name="meddelande" required></textarea>
+      
+          <button type="submit">Skicka</button>
+          <div id="status"></div>
+      
+        </form>
+      
+      </main>
+      
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+      
+      <script>
+        emailjs.init("6YEQrI7h44a9iHkGL");
+      
+        const form = document.getElementById("kontaktForm");
+        const statusDiv = document.getElementById("status");
+      
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+      
+          emailjs.sendForm(
+            "service_qssa7tm",
+            "template_6v9c2cg",
+            this
+          ).then(() => {
+            statusDiv.textContent = "Meddelandet skickades!";
+            form.reset();
+          }).catch(err => {
+            statusDiv.textContent = "Något gick fel.";
+            console.error(err);
+          });
+        });
+      </script>
+      
     
 </main>
 
@@ -48,11 +95,15 @@
       <div class="footer-col">
         <p class="contact-item">
          <img src="img/phone-call.png" alt="phone" class="icon"> 
-         +46 70 515 56 42
-        </p>
+        <a href="tel:+46705155642" class="contact-link">
+          +46 70 515 56 42
+        </a>
+      </p>
         <p class="contact-item">
         <img src="img/gmail.png" alt="mail" class="icon">
-        info@storkhuset.se
+        <a href="mailto:sten@storkhuset.com" class="contact-link">
+        sten@storkhuset.com
+      </a>
       </p>
       </div>
 

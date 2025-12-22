@@ -1,3 +1,4 @@
+/* ALLMÄN */
 html, body {
   height: 100%;
   margin: 0;
@@ -25,6 +26,7 @@ main {
   padding: 50px;
   flex-wrap: wrap;
   border-bottom: 1px solid white;
+  
 }
 
 .name-card, .company-card {
@@ -36,6 +38,117 @@ main {
   font-family: 'Playfair Display', serif;
   font-weight: 400; /* elegant men inte för tjock */
 }
+
+.name-card:hover {
+  transform: translateY(-6px);              
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12); 
+}
+
+.company-card:hover {
+  transform: translateY(-6px);              
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12); 
+}
+
+/* Själva länken */
+.contact-link {
+  color: white;          /* eller samma färg som texten */
+  text-decoration: none; /* ta bort blå underline */
+  font-weight: 500;
+}
+
+/* Hover-effekt (valfri men snygg) */
+.contact-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+
+/* ------------------ About Section Layout ------------------ */
+.about-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 100px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Profilbild */
+.profile-figure {
+  width: 320px;
+  height: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.profile-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Bubblor bredvid profilbilden */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  min-width: 250px;
+}
+
+
+/* Enskild bubbla */
+.bubble {
+  background-color: #f7f8fa;
+  border-radius: 18px;
+  padding: 30px 35px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* Rubriker */
+.about-text h2,
+.competencies h3 {
+  font-family: 'Playfair Display', serif;
+  color: #225d81;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #225d81;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Listor / punkter */
+.about-text ul,
+.competencies ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.about-text li,
+.competencies li {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-text li::before,
+.competencies li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #225d81;
+  font-size: 18px;
+}
+
+
+
 
 .name-card h1
 ,
@@ -128,6 +241,11 @@ main {
   border-top: 1px solid #225d81;
   padding-top: 10px;
   margin-top: auto; /* trycker ner företaget längst ner */
+}
+
+.project-bubble:hover {
+  transform: translateY(-6px);              /* lyfter boxen */
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12); /* tydligare skugga */
 }
 
 .site-header {
@@ -247,6 +365,65 @@ main {
   border-bottom: 2px solid #38bdf8;
 }
 
+.contact-page {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 30px;
+}
+
+.contact-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+#kontaktForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#kontaktForm input,
+#kontaktForm textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+#kontaktForm button {
+  background: #005a96;;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#status {
+  color: white;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#kontaktForm button:hover {
+  background: #005a96;
+}
+
+#status {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+#kontaktForm label {
+  color: #ffffff;      /* vit text */
+  font-weight: 600;
+}
+
+
+
+
 
 
 
@@ -266,5 +443,18 @@ main {
 
 .footer-copy{
   color: white;
+}
+
+
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+  }
+  
+  .about-content {
+    width: 100%;
+  }
 }
 
